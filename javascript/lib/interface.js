@@ -5,13 +5,11 @@ $(document).ready(function(){
 
   $('.choices img').on('click', function(){
     p1.picks($(this).data('pick'));
-    p2.picks('rock');
 
   var choices = $('.choices img').map(function(){ 
     return $(this).data('pick');
   });
 
-  p1.randomlyPicks(choices);
   p2.randomlyPicks(choices);
 
 // $('#results').prepend('<li>' + game.winningMessage() + '</li>');
