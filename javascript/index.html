@@ -5,7 +5,7 @@
     <link href='style.css' rel='stylesheet'>
   </head>
   <body>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <h1>Choose Your Weapon</h1>
     <section class='choices'>
       <img src="images/rock.png" data-pick='rock'>
       <img src="images/paper.png" data-pick='paper'>
@@ -19,30 +19,7 @@
     <script src='lib/Player.js'></script>
     <script src='lib/Game.js'></script>
     <script src='lib/jquery-2.1.1.min.js'></script>
-    <script>
-    $(document).ready(function(){
-      var p1 = new Player('Alex');
-      var p2 = new Player('Mihai');
-      var game = new Game(p1, p2);
-
-      $('.choices img').on('click', function(){
-        p1.picks($(this).data('pick'));
-        p2.picks('rock');
-
-        console.log('Hello')
-        // $('#results').prepend('<li>' + game.winningMessage() + '</li>');
-        $("<li>" + game.winningMessage() + "</li>").prependTo('#results').slideDown();
-
-        $("#results li:gt(3)").fadeOut(function(){
-          $(this).remove();
-          console.log('A')
-        });
-        console.log('B')
-
-      })
-    })
-    </script>
-
+    <script src='lib/interface.js'></script> 
   </body>
 </html>
 
